@@ -1,0 +1,11 @@
+{
+  "name": "ht-toolbar-nav",
+  "version": "1.0.0",
+  "main": "ht-toolbar-nav.js",
+  "repository": "https://github.com/maksimyurkov/ht-toolbar-nav",
+  "author": "maksimyurkov <yurkov.maksim.sergeevich@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@polymer/lit-element": "^0.5.1"
+  }
+}
