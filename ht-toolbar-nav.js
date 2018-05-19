@@ -56,7 +56,7 @@ class HTToolbarNav extends LitElement {
         data,
         i =>
           html`<a href=${i.href} active?=${
-            i.href && i.href.includes(page) ? true : false
+            i.href && i.href.startsWith(`/${page}`) ? true : false
           }>${
             i.title
           }<div class="hover-underline"></div><div class="active-underline"></div></a>`
