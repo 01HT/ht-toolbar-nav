@@ -75,6 +75,11 @@ class HTToolbarNav extends LitElement {
       page: String
     };
   }
+
+  constructor() {
+    super();
+    this.data = [];
+  }
 }
 
 customElements.define(HTToolbarNav.is, HTToolbarNav);
