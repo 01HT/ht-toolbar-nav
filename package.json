@@ -1,11 +1,11 @@
 {
   "name": "@01ht/ht-toolbar-nav",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "ht-toolbar-nav.js",
   "repository": "01ht/ht-toolbar-nav",
-  "author": "01ht Ltd",
+  "author": "01HT Ltd",
   "license": "UNLICENSED",
   "dependencies": {
-    "@polymer/lit-element": "^0.5.1"
+    "@polymer/lit-element": "^0.6.1"
   }
 }
