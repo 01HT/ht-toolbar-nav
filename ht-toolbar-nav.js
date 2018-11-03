@@ -75,7 +75,7 @@ class HTToolbarNav extends LitElement {
         i =>
           html`<a href=${i.href} target=${i.blank ? "_blank" : ""} ?active=${
             i.href && i.href.startsWith(`/${page}`) ? true : false
-          }>${i.title} ${
+          } rel="noopener">${i.title} ${
             i.blank
               ? html`<iron-icon icon="ht-toolbar-nav:open-in-new"></iron-icon>`
               : ``
