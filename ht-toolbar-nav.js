@@ -47,6 +47,7 @@ class HTToolbarNav extends LitElement {
       .active-underline, .hover-underline {
         position:absolute;
         bottom:0;
+        left: 0;
         width:0;
         height:4px;
       }
