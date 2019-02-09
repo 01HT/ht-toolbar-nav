@@ -1,14 +1,11 @@
 "use strict";
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html, css } from "lit-element";
 import { repeat } from "lit-html/directives/repeat.js";
 import "@polymer/iron-iconset-svg";
 import "@polymer/iron-icon";
 
 class HTToolbarNav extends LitElement {
-  render() {
-    const { data, page } = this;
-    return html`
-    <style>
+  static styles = css`<style>
       :host {
           display: block;
           position: relative;
@@ -62,7 +59,11 @@ class HTToolbarNav extends LitElement {
         width:100%;
         background: #dfe1e5;
       }
-    </style>
+    </style>`;
+
+  render() {
+    const { data, page } = this;
+    return html`
         <iron-iconset-svg size="24" name="ht-toolbar-nav">
         <svg>
             <defs>
@@ -74,9 +75,11 @@ class HTToolbarNav extends LitElement {
       ${repeat(
         data,
         i =>
-          html`<a href=${i.href} target=${i.blank ? "_blank" : ""} ?active=${
+          html`<a href="${i.href}" target="${
+            i.blank ? "_blank" : ""
+          }" ?active="${
             i.href && i.href.startsWith(`/${page}`) ? true : false
-          } rel="noopener">${i.title} ${
+          }" rel="noopener">${i.title} ${
             i.blank
               ? html`<iron-icon icon="ht-toolbar-nav:open-in-new"></iron-icon>`
               : ``
@@ -84,10 +87,6 @@ class HTToolbarNav extends LitElement {
       )}
     </nav>
 `;
-  }
-
-  static get is() {
-    return "ht-toolbar-nav";
   }
 
   static get properties() {
@@ -98,4 +97,4 @@ class HTToolbarNav extends LitElement {
   }
 }
 
-customElements.define(HTToolbarNav.is, HTToolbarNav);
+customElements.define("ht-toolbar-nav", HTToolbarNav);
