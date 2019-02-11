@@ -24,6 +24,7 @@ class HTToolbarNav extends LitElement {
           font-weight: 500;
           font-size: 14px;
           text-transform: uppercase;
+          outline: none;
         }
 
         nav {
