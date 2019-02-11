@@ -4,62 +4,64 @@ import { repeat } from "lit-html/directives/repeat.js";
 import "@polymer/iron-iconset-svg";
 import "@polymer/iron-icon";
 
+import { stylesBasicWebcomponents } from "@01ht/ht-theme/styles";
+
 class HTToolbarNav extends LitElement {
-  static styles = css`<style>
-      :host {
-          display: block;
+  static get styles() {
+    return [
+      stylesBasicWebcomponents,
+      css`
+        iron-icon {
+          width: 18px;
+          height: 18px;
+          margin-left: 4px;
+          color: var(--secondary-text-color);
+        }
+
+        a {
+          text-decoration: none;
+          color: #414549;
+          font-weight: 500;
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+
+        nav {
+          display: flex;
+          height: 64px;
+        }
+
+        nav > a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           position: relative;
-          box-sizing: border-box;
-      }
+          margin: 0 9px;
+          padding: 0 12px;
+        }
 
-      iron-icon {
-        width: 18px;
-        height: 18px;
-        margin-left: 4px;
-        color: var(--secondary-text-color);
-      }
+        .active-underline,
+        .hover-underline {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 4px;
+        }
 
-      a {
-        text-decoration: none;
-        color: #414549;
-        font-weight: 500;
-        font-size: 14px;
-        text-transform: uppercase;
-      }
+        a[active] .active-underline {
+          width: 100%;
+          background: var(--accent-color);
+          transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-      nav {
-        display:flex;
-        height:64px;
-      }
-
-      nav > a {
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        position: relative;
-        margin: 0 9px;
-        padding: 0 12px;
-      }
-
-      .active-underline, .hover-underline {
-        position:absolute;
-        bottom:0;
-        left: 0;
-        width:0;
-        height:4px;
-      }
-
-      a[active] .active-underline {
-        width:100%;
-        background: var(--accent-color);
-        transition: width .2s cubic-bezier(.4,0,.2,1);
-      }
-
-      a:hover .hover-underline {
-        width:100%;
-        background: #dfe1e5;
-      }
-    </style>`;
+        a:hover .hover-underline {
+          width: 100%;
+          background: #dfe1e5;
+        }
+      `
+    ];
+  }
 
   render() {
     const { data, page } = this;
